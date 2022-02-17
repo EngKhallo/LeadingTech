@@ -12,32 +12,83 @@
 <body class="bg-gray-100">
     <div class="app">
         <!-- ============Navigation Bar=============== -->
-        <div class="Navigation bg-white shadow-lg flex flex-row justify-between w-1/1 py-5 px-10">
-            <div class="flex flex-row space-x-10 px-10">
-                <h4 class="text-3xl font-bold text-gray-400">Leading<span class="text-red-500">Tech</span></h4>
-
-                <nav class="text-xl font-semibold space-x-5 px-10 flex items-center justify-center text-gray-500">
-                    <a href="/" class="hover:text-red-500 transition">Home</a>
-                    <a href="/" class="hover:text-red-500 transition">About</a>
-                    <a href="/" class="hover:text-red-500 transition">Services</a>
-                    <a href="/" class="hover:text-red-500 transition">Projects</a>
-                    <a href="/" class="hover:text-red-500 transition">Contact Us</a>
-                </nav>
+        <nav class="bg-white shadow-lg">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+                    <div class="flex space-x-7">
+                        <div>
+                            <!-- Website Logo -->
+                            <a href="#" class="flex items-center py-4 px-2">
+                                <h4 class="text-3xl font-bold text-gray-400">Leading<span
+                                        class="text-red-500">Tech</span></h4>
+                            </a>
+                        </div>
+                        <!-- Primary Navbar items -->
+                        <div class="hidden md:flex items-center space-x-1">
+                            <a href="" class="py-4 px-2 text-red-500 border-b-4 border-red-500 font-semibold ">Home</a>
+                            <a href=""
+                                class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Services</a>
+                            <a href=""
+                                class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
+                            <a href=""
+                                class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Contact
+                                Us</a>
+                        </div>
+                    </div>
+                    <!-- Secondary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-3 ">
+                        <a href=""
+                            class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-red-500 hover:text-white transition duration-300">Log
+                            In</a>
+                        <a href=""
+                            class="py-2 px-2 font-medium text-white bg-red-500 rounded hover:bg-red-400 transition duration-300">Sign
+                            Up</a>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="outline-none mobile-menu-button">
+                            <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 " x-show="!showMenu" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="flex px-20">
-                <button class="bg-red-500 text-xl text-white px-3 py-2 rounded shadow font-semibold">Contact Us</button>
+            <!-- mobile menu -->
+            <div class="hidden mobile-menu">
+                <ul class="">
+                    <li class="active"><a href="index.html"
+                            class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
+                    <li><a href="#services"
+                            class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Services</a></li>
+                    <li><a href="#about"
+                            class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">About</a></li>
+                    <li><a href="#contact"
+                            class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact Us</a>
+                    </li>
+                </ul>
             </div>
+            <script>
+                const btn = document.querySelector("button.mobile-menu-button");
+                const menu = document.querySelector(".mobile-menu");
 
-        </div>
+                btn.addEventListener("click", () => {
+                    menu.classList.toggle("hidden");
+                });
+            </script>
+        </nav>
+
 
 
         <!-- ============Header Section=============== -->
-        <header class="flex mt-10 px-20">
-            <div class="flex-1 space-y-10 mt-20 mx-auto">
-                <h1 class="text-6xl text-gray-500 font-bold">Solutions Based on <span class="text-red-500">Client's
+        <header class="flex flex-row mt-10 px-20 ">
+            <div class="md:flex-1 space-y-10 mt-20 mx-auto">
+                <h1 class="text-6xl text-center md:text-6xl text-gray-500 font-bold">Solutions Based on <span class="text-red-500">Client's
                     </span>Goal Strategies to Success</h1>
 
-                <div class="flex space-x-10">
+                <div class="flex items-center justify-center md:flex space-x-10">
                     <button
                         class="px-6 py-3 text-xl bg-red-500 text-white rounded font-semibold text-center shadow">Services</button>
                     <button
@@ -53,7 +104,7 @@
 
         <!-- ============About Section=============== -->
         <section class="About mt-10 h-full flex flex-row py-20 px-20 ">
-            <div class="flex-1 py-10">
+            <div class="md:flex-1 py-10">
                 <h1 class="text-4xl font-bold text-red-500 pb-10">Who Are We?</h1>
 
                 <span class="text-2xl font-semibold text-gray-500">
@@ -73,16 +124,16 @@
                         </span><span class="text-xl text-gray-500">Company Services </span></span>
                 </div>
             </div>
-            <div class="flex-1">
+            <div class="hidden md:flex-1 md:block">
                 <img src="./Assets/images/about_img.svg" alt="">
             </div>
         </section>
 
 
         <!-- ============Services Section=============== -->
-        <section class="container mx-auto px-5 py-10 space-y-10">
-            <h1 class="text-red-500 text-3xl font-bold text-center ">What We Offer</h1>
-            <div class="grid grid-cols-3 gap-1 text-center">
+        <section class="md:container px-5 py-10 space-y-10">
+            <h1 class="text-red-500 text-4xl font-bold text-center ">What We Offer</h1>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-center">
                 <!-- Card 1 -->
                 <div class="shadow-lg mb-4 p-10 transform hover:scale-110 transition">
                     <div class="content flex items-center justify-between space-x-10">
@@ -101,7 +152,7 @@
                 </div>
 
                 <!-- Image -->
-                <div class="p-5 flex items-center justify-center row-span-3">
+                <div class="hidden md:block p-5 flex items-center justify-center row-span-3">
                     <img src="./Assets/images/services_img.svg" alt="">
                 </div>
 
@@ -176,8 +227,8 @@
 
 
 
-                </div> 
-                
+                </div>
+
                 <!-- Card 6 -->
                 <div class="shadow-lg mb-4 p-10 transform hover:scale-110 transition">
                     <div class="content flex items-center justify-between space-x-10">
@@ -200,7 +251,85 @@
 
 
         <!-- ============Projects Section=============== -->
-        <section>
+        <section class="px-10 mx-auto py-10 space-y-10 ">
+            <h1 class="text-red-500 text-4xl font-bold text-center ">What We Have</h1>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
+
+                <!-- ====Card 1==== -->
+                <div onmouseover="show()"
+                    class="card  shadow-lg rounded md:px-12 py-16 border-b-8 border-red-500 transform hover:scale-110 transition">
+                    <div class="head flex justify-center items-center text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path
+                                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                        </svg>
+                    </div>
+                    <div class="back hidden">
+                        <p>I am Khalid Abdi </p>
+                    </div>
+                    <h1 class="text-gray-600 text-2xl font-bold text-center ">School Management System</h1>
+                </div>
+                <!-- ====Card 2==== -->
+                <div class=" shadow rounded border-b-8 border-red-500 px-12 py-14 transform hover:scale-110 transition">
+                    <div class="head flex justify-center items-center text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h1 class="text-gray-600 text-2xl font-bold text-center ">Health Management System</h1>
+                </div>
+                <!-- ====Card 3==== -->
+                <div class=" shadow rounded border-b-8 border-red-500 px-12 py-14 transform hover:scale-110 transition">
+                    <div class="head flex justify-center items-center text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h1 class="text-gray-600 text-2xl font-bold text-center ">Inventory Management System</h1>
+                </div>
+                <!-- ====Card 4==== -->
+                <div class=" shadow rounded border-b-8 border-red-500 px-12 py-14 transform hover:scale-110 transition">
+                    <div class="head flex justify-center items-center text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+                        </svg>
+                    </div>
+                    <h1 class="text-gray-600 text-2xl font-bold text-center ">E-Commerce Websites</h1>
+                </div>
+                <!-- ====Card 5==== -->
+                <div class=" shadow rounded border-b-8 border-red-500 px-12 py-14 transform hover:scale-110 transition">
+                    <div class="head flex justify-center items-center text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h1 class="text-gray-600 text-2xl font-bold text-center ">Project Management System</h1>
+                </div>
+                <!-- ====Card 6==== -->
+                <div class=" shadow rounded border-b-8 border-red-500 px-12 py-14 transform hover:scale-110 transition">
+                    <div class="head flex justify-center items-center text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path
+                                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                        </svg>
+                    </div>
+                    <h1 class="text-gray-600 text-2xl font-bold text-center ">Human-Resource Management System</h1>
+                </div>
+            </div>
         </section>
 
 
@@ -210,11 +339,63 @@
 
 
         <!-- ============Footer Section=============== -->
-        <section>
+        <section class=" mx-auto">
+            <div class="p-5 bg-gray-800 flex justify-center items-center flex-col space-y-10">
+                <h4 class="text-6xl font-bold text-gray-200">Leading<span class="text-red-500">Tech</span></h4>
+
+                <div class="icons flex flex-row gap-2 ">
+                    <div class="facebook bg-red-500 p-2 rounded-full transform hover:-translate-y-2 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-8 w-8" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="facebook bg-red-500 p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-8 w-8" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="facebook bg-red-500 p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-8 w-8" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+
+
+                <div class="copyright flex flex-row gap-2 text-xl text-gray-300 font-semibold">
+                    <p>&copy; <span class="copyYear"></span>
+                        Eng.Khalid Abdi
+                    </p>
+                </div>
         </section>
 
 
     </div>
 </body>
+
+<script>
+    let card = document.querySelector(".card");
+    let back = document.querySelector(".back");
+
+    function show() {
+        // back.classList = "show";
+        // card.classList.toggle = "hidden";
+    }
+
+
+    var date = new Date();
+    document.querySelector(".copyYear").innerHTML = date.getFullYear();
+
+    let isMenuShown = ref(true);
+</script>
 
 </html>
